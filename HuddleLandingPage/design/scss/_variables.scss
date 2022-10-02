@@ -1,0 +1,19 @@
+@mixin flexCenter ($direction){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:$direction;
+}
+@mixin flexleft{
+    display: flex;
+    align-items: center;
+    justify-content:right;
+    
+}
+@mixin hover{
+    background-color: hsl(300, 69%, 71%);
+    border:2px  transparent solid;
+    cursor: pointer;
+    transition: 0.5s all ease;
+}
+

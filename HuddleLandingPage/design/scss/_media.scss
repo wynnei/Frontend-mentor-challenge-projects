@@ -1,0 +1,122 @@
+$mobile:576px;
+$tablet:768px;
+$laptop:992px;
+$desktop:1200px;
+
+@mixin mobile {
+    @media screen and (min-width:$mobile){
+        @content;
+    }
+}
+@mixin tablet {
+    @media screen and (min-width:$tablet){
+        @content;
+    }
+}
+@mixin laptop {
+    @media screen and (min-width:$laptop){
+        @content;
+    }
+}
+@mixin desktop {
+    @media screen and (min-width:$desktop){
+        @content;
+    }
+}
+
+@include mobile{
+    body{
+        .container{
+            padding: 0px 5px;
+            width:$mobile;
+            .logo{
+                width: 180px;
+                margin-bottom: 40px;
+            }
+            .details{
+                .mock{
+                    width:$mobile;
+                }
+            }
+        }
+    }
+}
+@include tablet{
+    body{
+        .container{
+            padding: 0px 10px;
+            width:$tablet;
+            .logo{
+                width: 230px;
+                margin-bottom: 40px;
+            }
+            .details{
+                .mock{
+                    width: $tablet;
+                }
+                .content{
+                    
+                    h1{
+                        font-size: 36px; 
+                    }
+                    p{
+                        font-size: 24px;  
+                    }
+                }
+            }
+        }
+    }
+
+}
+@include laptop{
+    body{
+        .container{  
+            width:$laptop;
+            .logo{
+                width: 300px;
+                margin-bottom: 40px;
+            }
+            
+            .details{
+                @include flexCenter(row);
+                gap: 60px;
+                .mock{
+                    width: $laptop;
+                }
+                .content{
+                    text-align: left;
+                    h1{
+                        font-size: 50px;
+                    }
+                    p{
+                        font-size: 25px;
+                        margin: 30px 0px;
+                    }
+                    button{
+                        font-size: 20px;
+                    }
+                }
+            }
+            .links{
+                justify-content: right;
+                li{
+                    padding: 15px;
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+
+}
+@include desktop{
+    
+    body{
+        .container{
+            width:$desktop;
+            mock{
+                width: $desktop;
+            }
+        }
+    }
+
+}
